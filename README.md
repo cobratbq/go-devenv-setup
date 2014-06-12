@@ -8,14 +8,13 @@ Setting up a Go development environment with tooling.
 1. Get additional Go package repositories
 1. Get several additional tools for style checking, code checking, coverage analysis, etc.
 
-## Set scripting environment
+## Set up development environment
 
-Set environment variables:
-
-* GOROOT
-* GOPATH
-* GOBIN
-* PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+1. Set environment variables:
+  * `GOROOT=$HOME/golang/go`
+  * `GOPATH=$HOME/golang/env`
+  * `PATH=$GOPATH/bin:$GOROOT/bin:$PATH`
+1. See Go repository for instructions on modifying your vim configuration. (That configuration snippet is also included in Vim configuration section.)
 
 ## Vim configuration
 
