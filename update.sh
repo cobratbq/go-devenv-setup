@@ -3,7 +3,7 @@ if [ -d "go" ]; then
 	cd go
 	(hg pull && hg update -r tip) || exit 1
 else
-	hg clone -r tip https://code.google.com/p/go go
+	hg clone -r tip https://code.google.com/p/go go || exit 1
 	cd go
 fi
 cd src
