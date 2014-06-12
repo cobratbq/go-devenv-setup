@@ -16,7 +16,12 @@ cd ../..
 
 # get and update packages
 echo "Getting extra go package repositories: go.net, go.tools, go.crypto, go.image, go.text, go.exp ..."
-go get -u code.google.com/p/go.net code.google.com/p/go.tools code.google.com/p/go.crypto code.google.com/p/go.image code.google.com/p/go.text code.google.com/p/go.exp
+go get -u code.google.com/p/go.net
+go get -u code.google.com/p/go.tools
+go get -u code.google.com/p/go.crypto
+go get -u code.google.com/p/go.image
+go get -u code.google.com/p/go.text
+go get -u code.google.com/p/go.exp
 echo "Installing go tool cover ..."
 go get -u code.google.com/p/go.tools/cmd/cover
 echo "Installing godoc ..."
