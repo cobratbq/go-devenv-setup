@@ -1,4 +1,6 @@
 #!/bin/sh
+
+# install or update Go repository
 if [ -d "go" ]; then
 	cd go
 	(hg pull && hg update -r tip) || exit 1
@@ -6,10 +8,13 @@ else
 	hg clone -r tip https://code.google.com/p/go go || exit 1
 	cd go
 fi
+
+# make Go
 cd src
 ./make.bash || exit 1
 cd ../..
 
+# get and update packages
 echo "Getting extra go package repositories: go.net, go.tools, go.crypto, go.image, go.text, go.exp ..."
 go get -u code.google.com/p/go.net code.google.com/p/go.tools code.google.com/p/go.crypto code.google.com/p/go.image code.google.com/p/go.text code.google.com/p/go.exp
 echo "Installing go tool cover ..."
