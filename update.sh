@@ -30,10 +30,16 @@ echo "Installing goimports ..."
 go get -u code.google.com/p/go.tools/cmd/goimports
 echo "Installing go tool vet ..."
 go get -u code.google.com/p/go.tools/cmd/vet
+echo "Installing gorename ..."
+go get -u code.google.com/p/go.tools/cmd/gorename
 echo "Installing golint ..."
 go get -u github.com/golang/lint/golint
 echo "Installing nsf/gocode ..."
 go get -u github.com/nsf/gocode
 echo "Installing go oracle ..."
 go get -u code.google.com/p/go.tools/cmd/oracle
+echo "Installing errcheck ..."
+go get -u github.com/kisielk/errcheck
+echo "Installing gotags ..."
+go get -u github.com/jstemmer/gotags
 echo Done
