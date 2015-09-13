@@ -1,45 +1,34 @@
 #!/bin/sh
 
-# install or update Go repository
-if [ -d "go" ]; then
-	cd go
-	(hg pull && hg update -r tip) || exit 1
-else
-	hg clone -r tip https://code.google.com/p/go go || exit 1
-	cd go
-fi
+# go tools
+echo Installing go tools ...
+go get -u golang.org/x/tools/cmd/...
 
-# make Go
-cd src
-./make.bash || exit 1
-cd ../..
-
-# get and update packages
-echo "Getting extra go package repositories: go.net, go.tools, go.crypto, go.image, go.text, go.exp ..."
-go get -u code.google.com/p/go.net
-go get -u code.google.com/p/go.tools
-go get -u code.google.com/p/go.crypto
-go get -u code.google.com/p/go.image
-go get -u code.google.com/p/go.text
-go get -u code.google.com/p/go.exp
-echo "Installing go tool cover ..."
-go get -u code.google.com/p/go.tools/cmd/cover
-echo "Installing godoc ..."
-go get -u code.google.com/p/go.tools/cmd/godoc
-echo "Installing goimports ..."
-go get -u code.google.com/p/go.tools/cmd/goimports
-echo "Installing go tool vet ..."
-go get -u code.google.com/p/go.tools/cmd/vet
-echo "Installing gorename ..."
-go get -u code.google.com/p/go.tools/cmd/gorename
-echo "Installing golint ..."
+# go lint
+echo Installing golint ...
 go get -u github.com/golang/lint/golint
-echo "Installing nsf/gocode ..."
-go get -u github.com/nsf/gocode
-echo "Installing go oracle ..."
-go get -u code.google.com/p/go.tools/cmd/oracle
-echo "Installing errcheck ..."
+
+# errcheck
+echo Installing errcheck ...
 go get -u github.com/kisielk/errcheck
-echo "Installing gotags ..."
+
+# nsf gocode
+echo Installing gocode ...
+go get -u github.com/nsf/gocode
+
+# GB and standard plugins
+echo Installing gb and plugins ...
+go get -u github.com/constabulary/gb/...
+
+# go-fuzz
+echo Installing go-fuzz ...
+go get -u github.com/dvyukov/go-fuzz/go-fuzz
+go get -u github.com/dvyukov/go-fuzz/go-fuzz-build
+
+# gotags
+echo Installing gotags ...
 go get -u github.com/jstemmer/gotags
-echo Done
+
+# godef
+echo Installing godef ...
+go get -u github.com/rogpeppe/godef
