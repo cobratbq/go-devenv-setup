@@ -38,6 +38,9 @@ echo Installing unconvert ...
 go get -u github.com/mdempsky/unconvert
 
 # unused
-echo Installing go-unused
+echo Installing go-unused ...
 go get -u honnef.co/go/unused
 
+# gocyclo
+echo Installing gocyclo ...
+go get -u https://github.com/fzipp/gocyclo
