@@ -44,3 +44,7 @@ go get -u honnef.co/go/unused
 # gocyclo
 echo Installing gocyclo ...
 go get -u https://github.com/fzipp/gocyclo
+
+# check
+echo Installing check ...
+go get -u https://github.com/opennota/check
