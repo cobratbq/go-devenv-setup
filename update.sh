@@ -32,3 +32,12 @@ go get -u github.com/jstemmer/gotags
 # godef
 echo Installing godef ...
 go get -u github.com/rogpeppe/godef
+
+# unconvert
+echo Installing unconvert ...
+go get -u github.com/mdempsky/unconvert
+
+# unused
+echo Installing go-unused
+go get -u honnef.co/go/unused
+
